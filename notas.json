@@ -1,0 +1,14 @@
+[
+  {
+    "id": "2",
+    "titulo": "regañar a alex",
+    "descripcion": "wawawawwa",
+    "estado": "completada"
+  },
+  {
+    "id": "3",
+    "titulo": "nota nuevita",
+    "descripcion": "esta nota está nueva nuevita",
+    "estado": "en curso"
+  }
+]
