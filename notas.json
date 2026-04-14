@@ -10,5 +10,29 @@
     "titulo": "nota nuevita",
     "descripcion": "esta nota está nueva nuevita",
     "estado": "en curso"
+  },
+  {
+    "id": "4",
+    "titulo": "nota para probar",
+    "descripcion": "ola caracola",
+    "estado": "pendiente"
+  },
+  {
+    "id": "5",
+    "titulo": "nota para otra vez",
+    "descripcion": "ola papa",
+    "estado": "completada"
+  },
+  {
+    "id": "6",
+    "titulo": "otra vez",
+    "descripcion": "ola pappp",
+    "estado": "completada"
+  },
+  {
+    "id": "7",
+    "titulo": "nueva cdddds",
+    "descripcion": "ola pappp",
+    "estado": "pendiente"
   }
 ]

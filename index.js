@@ -42,6 +42,7 @@ app.put("/editar_nota/:id", (req, res)=>{
         //indica que id está buscando
     }
 })
+//se puede eduar el estado de la nota directamente.
 
 //eliminar notas
 app.delete("/eliminar_nota/:id", (req, res) =>{
@@ -59,8 +60,26 @@ app.delete("/eliminar_nota/:id", (req, res) =>{
         res.status(404).json({ mensaje: "No encontré esa nota" })
     }
 })
+//listar notas
+app.get("/listar_notas", (req, res)=>{
+    const { filtro } = req.query
 
-
+    if (filtro == "all"){
+    const notas = JSON.parse(fs.readFileSync('notas.json', 'utf-8'))
+    console.log("--- Reporte de Notas ---");
+    console.table(notas);
+    return res.json(notas);
+}
+    const notas = JSON.parse(fs.readFileSync('notas.json', 'utf-8'));//lee el archivo
+    const notasFiltradas = notas.filter(n => n.estado == filtro);
+    if (notasFiltradas.length > 0) {
+    console.table(notasFiltradas);
+    res.json(notasFiltradas);
+    }//revisa si hay algo en el array, para evitar enviar un listado de notas vacío
+    else {
+        res.status(404).send(`No se encontraron notas con el estado: ${filtro}`);
+    }
+})
 
 
 app.listen(4000, () => {
